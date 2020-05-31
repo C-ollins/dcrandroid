@@ -8,6 +8,8 @@ android:
     - extra-android-m2repository
     - extra-google-m2repository
 before_install:
+  - echo no | avdmanager create avd --name Pixel2 -k "system-images;android-28;google_apis;x86" -d "Pixel 2"
+  - emulator -avd test -no-skin -no-audio -no-window &
   - wget -O $ANDROID_HOME/android-ndk-r19b-linux-x86_64.zip https://dl.google.com/android/repository/android-ndk-r19b-linux-x86_64.zip
   - unzip -qq $ANDROID_HOME/android-ndk-r19b-linux-x86_64.zip -d $ANDROID_HOME/android-ndk-r19b-linux-x86_64
   - mv $ANDROID_HOME/android-ndk-r19b-linux-x86_64/android-ndk-r19b $ANDROID_HOME/ndk-bundle
