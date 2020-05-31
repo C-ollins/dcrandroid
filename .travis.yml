@@ -29,4 +29,4 @@ before_install:
   - export GO111MODULE=off
   - gomobile bind -target=android/386
   - cp dcrlibwallet.aar $GOPATH/../app/libs/dcrlibwallet.aar && cd $GOPATH/../
-install: - TERM=dumb ./gradlew -s assembleTstnetDebug
+install: TERM=dumb ./gradlew -s assembleTstnetDebug
