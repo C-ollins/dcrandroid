@@ -9,7 +9,7 @@ android:
     - extra-google-m2repository
     - sys-img-x86-android-28
 before_install:
-  - echo no | android create avd --force -n TestEmu -t android-28 --abi x86
+  - echo no | avdmanager create avd --force --name TestEmu --abi google_apis/x86_64 --package 'system-images;android-28;google_apis;x86_64'
   - emulator -avd TestEmu -no-skin -no-audio -no-window &
   - wget -O $ANDROID_HOME/android-ndk-r19b-linux-x86_64.zip https://dl.google.com/android/repository/android-ndk-r19b-linux-x86_64.zip
   - unzip -qq $ANDROID_HOME/android-ndk-r19b-linux-x86_64.zip -d $ANDROID_HOME/android-ndk-r19b-linux-x86_64
