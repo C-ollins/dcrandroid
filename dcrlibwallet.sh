@@ -25,6 +25,10 @@ if !(hash gomobile 2>/dev/null); then
     installGomobile
 fi
 
+echo $GOPATH
+
+echo $PATH
+
 which go
 which gomobile
 echo "Building dcrlibwallet"
