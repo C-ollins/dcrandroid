@@ -14,9 +14,9 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Build Dcrlibwallet
-        run: ./dcrlibwallet.sh
-        working-directory: dart_project
+      # - name: Build Dcrlibwallet
+      #   run: ./dcrlibwallet.sh
+      #   working-directory: dart_project
 
       - name: Run Android Linter
         run: ./gradlew lintTstnetDebug
