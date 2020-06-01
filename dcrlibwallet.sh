@@ -17,7 +17,7 @@ installGomobile(){
     gomobile init
 }
 
-if (hash gomobile 2>/dev/null); then
+if !(hash gomobile 2>/dev/null); then
     if !(hash go 2>/dev/null); then
         installGo
     fi
