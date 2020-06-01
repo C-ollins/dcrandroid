@@ -5,10 +5,6 @@ installGo(){
     tar -xvf go1.12.9.linux-amd64.tar.gz
     sudo chown -R root:root ./go
     sudo mv go /usr/local
-
-    export GOPATH=$HOME/go
-    export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-    source ~/.profile
 }
 
 installGomobile(){
@@ -17,16 +13,19 @@ installGomobile(){
     gomobile init
 }
 
-if !(hash gomobile 2>/dev/null); then
-    if !(hash go 2>/dev/null); then
-        installGo
-    fi
+if !(hash go 2>/dev/null); then
+    installGo
+fi
 
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+source ~/.profile
+
+if !(hash gomobile 2>/dev/null); then
     installGomobile
 fi
 
 echo $GOPATH
-
 echo $PATH
 
 which go
