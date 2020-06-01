@@ -1,4 +1,4 @@
-name: Build
+name: Build and Test
 on: [push, pull_request]
 
 jobs:
@@ -14,8 +14,9 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Moving build to artifacts directory
+      - name: Build Dcrlibwallet
         run: ../../dcrlibwallet.sh
+        working-directory: dart_project
 
       - name: Run Android Linter
         run: ./gradlew lintTstnetDebug
