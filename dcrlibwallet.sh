@@ -25,6 +25,8 @@ if (hash gomobile 2>/dev/null); then
     installGomobile
 fi
 
+which go
+which gomobile
 echo "Building dcrlibwallet"
 export DcrandroidDir=$(pwd)
 mkdir -p $GOPATH/src/github.com/raedahgroup
