@@ -170,6 +170,7 @@ class CreateAndDeleteWalletTest {
         // scroll to delete button(smaller screens) and perform click
         onView(withId(R.id.remove_wallet)).perform(scrollTo(), click())
 
+        WaitForUIUpdate.waitForWithId(R.id.btn_positive)
         WaitForUIUpdate.waitFor(actionDelay)
 
         // Confirm delete wallet warning and proceed

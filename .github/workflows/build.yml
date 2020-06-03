@@ -44,7 +44,6 @@ jobs:
 
       - name: Run Espresso Tests
         uses: reactivecircus/android-emulator-runner@v2
-        if: false
         with:
           api-level: 28
           script: ./gradlew connectedTstnetDebugAndroidTest
